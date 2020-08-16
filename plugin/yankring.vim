@@ -1058,10 +1058,10 @@ function! YRRecordAu(event_dict)
 
     " Add item to list
     " This will also account for duplicates.
-    call s:YRMRUAdd( 's:yr_history_list'
-                \ , join(a:event_dict.regcontents, "\n")
-                \ , a:event_dict.regtype
-                \ )
+    " call s:YRMRUAdd( 's:yr_history_list'
+    "             \ , join(a:event_dict.regcontents, "\n")
+    "             \ , a:event_dict.regtype
+    "             \ )
 
     return YRRecordCleanup(0)
 endfunction
