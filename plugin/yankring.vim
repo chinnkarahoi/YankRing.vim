@@ -1058,10 +1058,12 @@ function! YRRecordAu(event_dict)
 
     " Add item to list
     " This will also account for duplicates.
-    " call s:YRMRUAdd( 's:yr_history_list'
-    "             \ , join(a:event_dict.regcontents, "\n")
-    "             \ , a:event_dict.regtype
-    "             \ )
+    if a:event_dict.visual
+      call s:YRMRUAdd( 's:yr_history_list'
+                  \ , join(a:event_dict.regcontents, "\n")
+                  \ , a:event_dict.regtype
+                  \ )
+    endif
 
     return YRRecordCleanup(0)
 endfunction
@@ -1844,7 +1846,7 @@ function! s:YRMapsCreate(...)
     endif
 
     if g:yankring_v_key != ''
-        exec 'xnoremap <unique><silent>'.g:yankring_v_key." :YRYankRange 'v'<CR>"
+        " exec 'xnoremap <unique><silent>'.g:yankring_v_key." :YRYankRange 'v'<CR>"
     endif
     if g:yankring_del_v_key != ''
         for v_map in split(g:yankring_del_v_key)
