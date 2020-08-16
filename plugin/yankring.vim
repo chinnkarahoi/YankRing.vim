@@ -1367,6 +1367,8 @@ endfunction
 " Paste from either the yankring or from a specified register
 " Optionally a count can be provided, so paste the same value 10 times
 function! s:YRPaste(replace_last_paste_selection, nextvalue, direction, ...)
+    nmap n :<C-U>YRReplace '-1', P<cr>
+    nmap N :<C-U>YRReplace '1', p<cr>
     if g:yankring_manual_clipboard_check == 1
         call s:YRCheckClipboard()
     endif
@@ -1407,10 +1409,10 @@ function! s:YRPaste(replace_last_paste_selection, nextvalue, direction, ...)
         let start = line("'[")
         let end = line("']")
 
-        if start != line('.')
-            call s:YRWarningMsg( 'YR: You must paste text first, before you can replace' )
-            return
-        endif
+        " if start != line('.')
+        "     call s:YRWarningMsg( 'YR: You must paste text first, before you can replace' )
+        "     return
+        " endif
 
         if start == 0 || end == 0
             return
