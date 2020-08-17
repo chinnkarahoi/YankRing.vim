@@ -1852,7 +1852,7 @@ function! s:YRMapsCreate(...)
         for v_map in split(g:yankring_del_v_key)
             if !empty(v_map)
                 try
-                    exec 'xnoremap <unique><silent>'.v_map." :YRDeleteRange 'v'<CR>"
+                    " exec 'xnoremap <unique><silent>'.v_map." :YRDeleteRange 'v'<CR>"
                 catch
                 endtry
             endif
