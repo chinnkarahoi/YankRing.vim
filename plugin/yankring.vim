@@ -2818,7 +2818,10 @@ function! s:YRCheckClipboard()
                 " Only add the item to the "top" of the ring if it is
                 " not in the ring already.
                 if found == -1
-                    call YRRecordRepeat("+")
+                  call s:YRMRUAdd( 's:yr_history_list'
+                        \ , @+
+                        \ , 'v'
+                        \ )
                 endif
                 let s:yr_prev_clipboard_plus = @+
             endif
@@ -2833,7 +2836,10 @@ function! s:YRCheckClipboard()
                 " Only add the item to the "top" of the ring if it is
                 " not in the ring already.
                 if found == -1
-                    call YRRecordRepeat("*")
+                  call s:YRMRUAdd( 's:yr_history_list'
+                        \ , @*
+                        \ , 'v'
+                        \ )
                 endif
                 let s:yr_prev_clipboard_star = @*
             endif
