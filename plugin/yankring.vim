@@ -1433,8 +1433,8 @@ endfunction
 " Paste from either the yankring or from a specified register
 " Optionally a count can be provided, so paste the same value 10 times
 function! s:YRPaste(replace_last_paste_selection, nextvalue, direction, ...)
-    nmap n :<C-U>YRReplace '-1', P<cr>
-    nmap N :<C-U>YRReplace '1', p<cr>
+    nnoremap <M-p> :<C-U>YRReplace '-1', P<cr>
+    nnoremap <M-P> :<C-U>YRReplace '1', p<cr>
     if g:yankring_manual_clipboard_check == 1
         call s:YRCheckClipboard()
     endif
@@ -1803,7 +1803,7 @@ function! s:YRMapsCreate(...)
     endif
 
     " silent! nmap <expr> @ YRMapsExpression("<SID>", "@", "1")
-    silent! nmap @ :<C-U>YRMapsMacro<CR>
+    " silent! nmap @ :<C-U>YRMapsMacro<CR>
 
     let s:yr_maps_created_zap = 1
 
