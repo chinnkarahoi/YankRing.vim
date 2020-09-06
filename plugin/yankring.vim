@@ -262,11 +262,11 @@ if !exists('g:yankring_paste_check_default_register')
 endif
 
 if !exists('g:yankring_replace_n_pkey')
-    let g:yankring_replace_n_pkey = '<C-P>'
+    let g:yankring_replace_n_pkey = ''
 endif
 
 if !exists('g:yankring_replace_n_nkey')
-    let g:yankring_replace_n_nkey = '<C-N>'
+    let g:yankring_replace_n_nkey = ''
 endif
 
 if !exists('g:yankring_clipboard_monitor')
@@ -2982,7 +2982,7 @@ if g:yankring_enabled == 1
 endif
 
 call s:YRInit()
-call s:YRCheckClipboard()
+" call s:YRCheckClipboard()
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
