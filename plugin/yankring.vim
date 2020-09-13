@@ -2905,7 +2905,7 @@ augroup END
 
 if has('clipboard')
     " Call YRFocusGained to check if the clipboard has been updated
-    autocmd YankRing VimEnter     * :call <SID>YRFocusGained()
+    autocmd User AsyncVimEnter    :call <SID>YRFocusGained()
     autocmd YankRing FocusGained  * :call <SID>YRFocusGained()
 endif
 
